@@ -159,3 +159,4 @@ EXPO_PUBLIC_SUPABASE_TRENDING_TABLE=trending_searches
    - Track user preferences
    - Add movie ratings
    - Implement recommendation engine
+
