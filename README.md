@@ -48,3 +48,26 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## Supabase setup
+
+Set the following environment variables in `.env` (and ensure they are loaded via Expo):
+
+```
+EXPO_PUBLIC_SUPABASE_URL=your_project_url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+EXPO_PUBLIC_SUPABASE_TRENDING_TABLE=trending_searches
+```
+
+Create a table named `trending_searches` with columns:
+
+- `id`: bigint/bigint identity (primary key)
+- `searchTerm`: text
+- `movie_id`: integer
+- `title`: text
+- `count`: integer
+- `poster_url`: text
+
+Recommended index: create an index on `count` descending for faster ordering.
+
+Row Level Security can be enabled with a permissive policy for read and insert/update as needed for anonymous users, or route through a backend.
